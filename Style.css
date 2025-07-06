@@ -342,7 +342,6 @@ h1{
     font-size: 50px; 
   font-weight: medium;
   background: linear-gradient(to right, #a64bf4, #ff4fd8);
-  /* background-color: white; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
