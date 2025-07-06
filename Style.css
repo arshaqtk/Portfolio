@@ -58,9 +58,89 @@ header{
   transition: all 0.3s ease; 
 }
 
+/* Hamburger Icon */
+.mobile-menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Mobile Menu Style */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(17, 17, 17, 0.98);
+  padding-top: 80px;
+  padding-bottom: 40px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  z-index: 9998;
+  animation: fadeSlide 0.4s ease forwards;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Show hamburger only on mobile */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  /* Hide desktop navbar's UL on mobile */
+  .navbar .list-unstyled {
+    display: none !important;
+  }
+}
+
 .hero {
     height: 100vh;
 }
+
+.hero img{
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* soft shadow */
+  border-radius: 15px;
+}
+
 .section-dark {
   background-color: #1a1a1a;
   color: white;
@@ -173,12 +253,7 @@ header{
 .card-image{
 height: 200px;
 }
-.contact-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
+
 
 .contact-img{
   height: 500px;
@@ -206,8 +281,8 @@ height: 200px;
     }
 
 .contact-box{
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
   /* background-color: white; */
   /* box-shadow:
     0 10px 20px rgba(0, 0, 0, 0.4),
@@ -226,17 +301,20 @@ height: 200px;
 } */
 .contact-box input{
   height: 50px;
-  width: 350px;
+  width: 250px;
 }
 .contact-box textarea{
   height: 80px;
-  width: 350px;
+  width: 250px;
 }
 .form{
   display: flex;
   justify-content: center;
 }
 
+
+
+/* responsive */
 
 
 @media (min-width: 576px) {  /* sm */
@@ -267,6 +345,18 @@ h1{
   /* background-color: white; */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.contact-box{
+  height: 500px;
+  width: 500px;
+}
+.contact-box input{
+  height: 50px;
+  width: 350px;
+}
+.contact-box textarea{
+  height: 80px;
+  width: 350px;
 }
 }
 

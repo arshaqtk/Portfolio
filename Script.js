@@ -11,6 +11,34 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.jump-title').forEach(el => observer.observe(el));
 
 
+
+
+  const mobileNav = document.getElementById('mobileNav');
+
+  function toggleMobileMenu() {
+    if (mobileNav.style.display === 'flex') {
+      mobileNav.style.display = 'none';
+    } else {
+      mobileNav.style.display = 'flex';
+    }
+  }
+
+  function closeMobileMenu() {
+    mobileNav.style.display = 'none';
+  }
+
+  // Optional: close menu when clicked outside
+  window.addEventListener('click', function (e) {
+    if (!e.target.closest('.mobile-menu-toggle') && !e.target.closest('.mobile-nav')) {
+      closeMobileMenu();
+    }
+  });
+
+
+
+
+
+
 function sendMail(e) {
      e.preventDefault(); 
     var params = {
